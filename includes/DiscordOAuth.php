@@ -31,12 +31,12 @@ class DiscordOAuth {
         ];
     }
 
-    public function getAuthorizationUrl($clientId, $scopes) {
+    public function getAuthorizationUrl($clientId, $scopes, $redirectUri) {
         return 'https://discord.com/api/oauth2/authorize?' . http_build_query([
             'response_type' => 'code',
             'client_id'     => $clientId,
             'scope'         => $scopes,
-            'redirect_uri'  => 'your redirect uri',
+            'redirect_uri'  => $redirectUri
         ]);
     }
 

@@ -1,7 +1,6 @@
 <?php
 require_once 'includes/config.php';
 
-// Assuming the $website['url'] also contains the valid redirect URL for OAuth
 $redirectUri = $website['redirect_url'];
 
 if (isset($_SESSION['discord']) || isset($_GET['error'])) {
@@ -31,7 +30,7 @@ if (isset($_SESSION['discord']) || isset($_GET['error'])) {
         }
     }
 } else {
-    $authUrl = $discordOAuth->getAuthorizationUrl($website['discord_client'], $website['discord_scopes']);
+    $authUrl = $discordOAuth->getAuthorizationUrl($website['discord_client'], $website['discord_scopes'], $redirectUri);
     header('Location: ' . $authUrl);
     exit;
 }
