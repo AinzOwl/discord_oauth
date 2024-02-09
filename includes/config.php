@@ -4,8 +4,6 @@ require_once(__dir__ . '/DiscordOAuth.php'); // If not using Composer
 use AinzOwl\DiscordOAuth\DiscordOAuth;
 
 // Global path constants (if needed) and starting a session.
-define('PATH_ABSOLUTE', dirname(__FILE__) . '/../');
-define('PATH_INCLUDES', PATH_ABSOLUTE . 'includes/');
 session_start();
 
 // Global website variables.
